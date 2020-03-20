@@ -6,7 +6,7 @@
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script>
 $(document).ready(function () {
-    $("button").click(function () {
+    $("button.fade").click(function () {
         $("#div1").fadeOut();
         $("#div2").fadeOut("slow");
         $("#div3").fadeOut(3000);
@@ -14,6 +14,14 @@ $(document).ready(function () {
     $(".flip").click(function () {
         $(".panel").slideDown("slow");
     });
+    $("button.cartoon").click(function(){
+    $("div.cartoon").animate({left:'250px'});
+    $("button.h").click(function(){
+    $("div.h").animate({
+      height:'toggle'
+    });
+  });
+  });
 });
 </script>
     <style type="text/css">
@@ -34,7 +42,7 @@ display:none;
 </head>
 <body>
 <p>演示带有不同参数的 fadeIn() 方法。</p>
-<button>点击这里，使三个矩形淡入</button>
+<button class="fade">点击这里，使三个矩形淡入</button>
 <br><br>
 <div id="div1" style="width:80px;height:80px;display:block;background-color:red;"></div>
 <br>
@@ -43,9 +51,19 @@ display:none;
 <div id="div3" style="width:80px;height:80px;display:block;background-color:blue;"></div>
 
 <div class="panel">
-    <p>wwwwwwwwwwwwwww</p>
-    <p>haoloooooooooooooo</p>
+    <p>一寸光阴一寸金，因此，我们为您提供快捷易懂的学习内容</p>
+    <p>在这里，您可以通过一种易懂的便利的模式获得您需要的任何知识。</p>
 </div>
 <p class="flip">请点击这里</p>
+<hr>
+<button class="cartoon">开始动画</button>
+<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+<div class="cartoon" style="background:#98bf21;height:100px;width:100px;position:relative;">
+</div>
+<hr>
+<button class="h">开始动画</button>
+<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+<div class="h" style="background:#98bf21;height:100px;width:100px;position:relative;">
+</div>
 </body>
 </html>
