@@ -15,29 +15,48 @@ $(document).ready(function () {
         $(".panel").slideDown("slow");
     });
     $("button.cartoon").click(function(){
-    $("div.cartoon").animate({left:'250px'});
-    $("button.h").click(function(){
-    $("div.h").animate({
-      height:'toggle'
+        $("div.cartoon").animate({left:'250px'});
     });
-  });
-  });
+    $("button.h").click(function(){
+        $("div.h").animate({
+          height:'toggle'
+        });
+    });
+    $("#flip1").click(function () {
+        $("#panel1").slideDown(5000);
+    });
+    $("#stop").click(function () {
+        $("#panel1").stop();
+    });
 });
 </script>
     <style type="text/css">
-div.panel,p.flip
-{
-margin:0px;
-padding:5px;
-text-align:center;
-background:#e5eecc;
-border:solid 1px #c3c3c3;
-}
-div.panel
-{
-height:120px;
-display:none;
-}
+    div.panel,p.flip
+    {
+    margin:0px;
+    padding:5px;
+    text-align:center;
+    background:#e5eecc;
+    border:solid 1px #c3c3c3;
+    }
+    div.panel
+    {
+    height:120px;
+    display:none;
+    }
+
+    #panel1,#flip1
+    {
+    padding:5px;
+    text-align:center;
+    background-color:#e5eecc;
+    border:solid 1px #c3c3c3;
+    }
+    #panel1
+    {
+    padding:50px;
+    display:none;
+    }
 </style>
 </head>
 <body>
@@ -61,9 +80,14 @@ display:none;
 <div class="cartoon" style="background:#98bf21;height:100px;width:100px;position:relative;">
 </div>
 <hr>
+<button id="stop">停止滑动</button>
+<div id="flip1">点击这里，向下滑动面板</div>
+<div id="panel1">Hello world!</div>
+<hr>
 <button class="h">开始动画</button>
 <p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
 <div class="h" style="background:#98bf21;height:100px;width:100px;position:relative;">
 </div>
+
 </body>
 </html>

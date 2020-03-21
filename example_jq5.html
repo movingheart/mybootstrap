@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+
+    $("#b1").click(function () {
+        $("#t1").text(function (i, oriText) {
+            return "Old text:" + oriText + " New text:Hello wrold!(index:" + i + ")";
+        });
+    });
+    $("#b2").click(function () {
+        $("#t2").html(function (i, oriText) {
+            return "Old html:" + oriText + " New html:Hello <b>world</b>(index:" + i + ")";
+        });
+    });
+    $("#b3").click(function () {
+        $("#w3s").attr("href", "http://www.w3school.com.cn/query");
+    });
+    $("#b4").click(function () {
+        $("#w3s").attr({
+            "href": "http://www.baidu.com",
+            "title": "baidu"
+        })
+    });
+    $("#b5").click(function () {
+        $("#w3s").attr("href", function (i, originValue) {
+            return originValue + "/query";
+        });
+    });
+});
+</script>
+</head>
+<body>
+<hr>
+<p id="t1">这是<b>段落</b></p>
+<p id="t2">这是另一个<b>段落</b></p>
+<button id="b1">显示旧/新文本</button>
+<button id="b2">显示旧/新 HTML</button>
+<hr>
+<p><a href="http://www.w3school.com.cn" id="w3s">W3School.com.cn</a> </p>
+<button id="b3">改变href值</button>
+<button id="b4">设置多个属性</button>
+<button id="b5">属性回调</button>
+<p>请把鼠标指针移动到链接上</p>
+</body>
+</html>
