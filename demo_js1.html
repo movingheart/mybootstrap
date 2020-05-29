@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> let关键字使用 </title>
+</head>
+<body>
+<script>
+
+    // let 关键字的使用：
+    // 使用 let 语句声明一个变量，该变量的范围限于声明它的块中。  可以在声明变量时为变量赋值，也可以稍后在脚本中给变量赋值。
+    // 使用 let 声明的变量，在声明前无法使用，否则将会导致错误。
+    // 如果未在 let 语句中初始化您的变量，则将自动为其分配 JavaScript 值 undefined
+    (function() {
+      var varTest = 'test var OK.';
+      let letTest = 'test let OK.';
+
+      {
+        var varTest = 'varTest changed.';
+        let letTest = 'letTest changed.';
+      }
+
+      console.log(varTest); //输出"varTest changed."，内部"{}"中声明的varTest变量覆盖外部的letTest声明
+      console.log(letTest); //输出"test let OK."，内部"{}"中声明的letTest和外部的letTest不是同一个变量
+    }());
+
+</script>
+</body>
+</html>
